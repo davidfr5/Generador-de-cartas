@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Dominios</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Carta Aleatoria</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Generador de Nombres de Dominio</h1>
-        <button id="generateBtn">Generar Dominios</button>
-        <ul id="domainList"></ul>
+    <div class="card" id="card">
+        <span class="item top" id="top-item"></span>
+        <span id="value">8</span>
+        <span class="item bottom" id="bottom-item"></span>
     </div>
+    <button onclick="generateCard()">Actualizar Carta</button>
     <script src="app.js"></script>
 </body>
 </html>
