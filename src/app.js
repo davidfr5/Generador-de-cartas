@@ -1,21 +1,21 @@
-let pronoun = ['the', 'our'];
-let adj = ['great', 'big'];
-let noun = ['jogger', 'racoon'];
-
-function generateDomains() {
-    let domainList = document.getElementById("domainList");
-    domainList.innerHTML = ""; // Limpia la lista antes de generar nuevos elementos
-
-    for (let p of pronoun) {
-        for (let a of adj) {
-            for (let n of noun) {
-                let domain = `${p}${a}${n}.com`;
-                let listItem = document.createElement("li");
-                listItem.textContent = domain;
-                domainList.appendChild(listItem);
-            }
-        }
+function generateCard() {
+    const palos = ["♥", "♦", "♣", "♠"];
+    const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    
+    let item = palos[Math.floor(Math.random() * palos.length)];
+    let value = values[Math.floor(Math.random() * values.length)];
+    
+    document.getElementById("top-item").innerText = item;
+    document.getElementById("bottom-item").innerText = item;
+    document.getElementById("value").innerText = value;
+    
+    if (item === "♥" || item === "♦") {
+        document.getElementById("top-item").classList.add("red");
+        document.getElementById("bottom-item").classList.add("red");
+    } else {
+        document.getElementById("top-item").classList.remove("red");
+        document.getElementById("bottom-item").classList.remove("red");
     }
 }
 
-document.getElementById("generateBtn").addEventListener("click", generateDomains);
+window.onload = generateCard;
